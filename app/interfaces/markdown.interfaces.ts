@@ -6,4 +6,7 @@ export interface PostData {
   author: string;
   categories: string[];
   readTime: string;
+  views: string;
+  image: string;
+  excerpt: string;
 }

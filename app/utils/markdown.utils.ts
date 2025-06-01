@@ -5,6 +5,7 @@ import { remark } from "remark";
 import html from "remark-html";
 
 import { PostData } from "../interfaces/markdown.interfaces";
+import { PopularPost } from "../interfaces/posts.interface";
 
 export namespace MarkdownUtils {
   export async function getPost(slug: string) {
@@ -32,5 +33,19 @@ export namespace MarkdownUtils {
     const filenames = fs.readdirSync(fullPath);
 
     return filenames.map((filename) => filename.replace(/\.md$/, ""));
+  }
+
+  export async function getAllPosts() {
+    const posts = getPostsName();
+    
+    return Promise.all(posts.map((post) => getPost(post)));
+  }
+
+  export function getPopularPosts(posts: PostData[]): PopularPost[] {
+    return posts.slice(0, 3).map((post) => ({
+      id: post.id,
+      title: post.title,
+      views: post.views,
+    }));
   }
 }

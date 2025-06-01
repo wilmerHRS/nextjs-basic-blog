@@ -68,22 +68,6 @@ export default async function PostPage({
             />
           </div>
         </article>
-
-        {/* Navegación adicional */}
-        <div className="mt-8 flex justify-between items-center">
-          <button className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors duration-200">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Artículo anterior
-          </button>
-          <button className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors duration-200">
-            Siguiente artículo
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
       </div>
     </div>
   );
