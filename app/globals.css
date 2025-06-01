@@ -12,15 +12,74 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Estilos equivalentes a las clases Tailwind "prose" personalizadas */
+.prose-custom {
+  max-width: none;
+  color: #374151; /* gray-700 */
+}
+
+/* Headings - Centrado y más grande */
+.prose-custom h1,
+.prose-custom h2,
+.prose-custom h3,
+.prose-custom h4 {
+  @apply text-gray-900 font-bold;
+}
+
+/* H2 específico - Tamaño aumentado y centrado */
+.prose-custom h1 {
+  @apply text-3xl text-center my-8; /* Tamaño más grande (3xl) y centrado */
+}
+
+/* H2 específico - Tamaño aumentado y centrado */
+.prose-custom h2 {
+  @apply text-2xl my-8; /* Tamaño más grande (3xl) y centrado */
+}
+
+/* H3 */
+.prose-custom h3 {
+  @apply text-xl mt-6 mb-3;
+}
+
+/* Párrafos */
+.prose-custom p {
+  @apply text-gray-700 leading-relaxed mb-6;
+}
+
+/* Listas con viñetas de punto */
+.prose-custom ul {
+  @apply text-gray-700 list-disc pl-5; /* list-disc añade viñetas */
+}
+
+.prose-custom li {
+  @apply mb-2;
+}
+
+/* Texto en negrita */
+.prose-custom strong {
+  @apply text-gray-900 font-semibold;
+}
+
+/* Enlaces */
+.prose-custom a {
+  @apply text-blue-500 no-underline hover:text-blue-600 hover:underline;
+}
+
+/* Imágenes */
+.prose-custom img {
+  @apply max-h-[500px] w-full object-cover rounded-2xl;
 }
